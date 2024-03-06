@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="main">
+
+        <div class="filter"> <!--we can also use template reference here inside input tag for multiple entries -->
+            <input type="search" name="search" placeholder="Search here.." [(ngModel)]="searchValue" class="input-search" (input)="onSearch()">
+        </div>
+        
+    </div>
+    <ng-container *ngIf="searchValue.length=== 0 || tempLoanTypeList.length > 0; else noResult">
+        
+        <table class="form-table">
+            <thead>
+                <tr>
+                    <th>Loan Number</th>
+                    <th>Loan Type</th>
+                    <th>Interest Rate</th>
+                    <th>Mang. Fee</th>
+                    <th>Action</th>
+                   
+                </tr>
+            </thead>
+            <tr *ngFor="let loans of (tempLoanTypeList.length > 0 ? tempLoanTypeList : loanTypeList)">
+                <td>{{loans.loanTypeId}}</td>
+                <td>{{loans.loanTypeName}}</td>
+                <td>{{loans.loanInterestBaseRate}}</td>
+                <td>{{loans.loanManagementFees}}</td>
+                <td><button type="button" class="btn" (click)="applyLoan(loans.loanTypeName)">Apply now</button></td>
+            </tr>
+        </table>
+    </ng-container>
+    <ng-template #noResult >
+        
+            <p style="font-weight: bold; text-align: center; margin-top: 20vh; font-size: 24px;">No Loan Type found</p>
+        
+    </ng-template>
+</div>

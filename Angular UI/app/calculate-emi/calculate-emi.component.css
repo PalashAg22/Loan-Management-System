@@ -1,0 +1,75 @@
+/* Styles for the form */
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form-container {
+  width: 80%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="number"],
+input[type="text"],
+select, /* Apply the same styling to select elements */
+button {
+  width: calc(100% - 24px);
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Optional: Center the form horizontally */
+.form-container {
+  margin: 0 auto;
+}
+.submit-button {
+  background-color: #007bff; /* Blue background color */
+  color: white; /* White text color */
+  padding: 8px 16px; /* Padding around text */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Cursor style on hover */
+}
+
+.submit-button:disabled {
+  background-color: #ccc; /* Grey background color for disabled state */
+  color: #666; /* Darker text color for disabled state */
+  cursor: not-allowed; /* Disabled cursor style */
+}
